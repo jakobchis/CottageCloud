@@ -1,0 +1,54 @@
+{
+  "name": "address",
+  "plural": "addresses",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "street": {
+      "type": "string",
+      "required": true
+    },
+    "unit": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "province_id": {
+      "type": "string",
+      "required": true
+    },
+    "country_id": {
+      "type": "string",
+      "required": true
+    },
+    "profile_id": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "creditCards": {
+      "model": "credit_card",
+      "type": "hasMany",
+      "foreignKey": "billing_address_id"
+    },
+    "profile": {
+      "model": "profile",
+      "type": "hasOne",
+      "foreignKey": "default_address_id"
+    },
+    "properties": {
+      "model": "property",
+      "type": "hasMany",
+      "foreignKey": "address_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

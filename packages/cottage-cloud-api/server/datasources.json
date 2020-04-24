@@ -1,0 +1,7 @@
+{
+  "db": {
+    "url": "mongodb+srv://cottage-cloud-api:4OFDjBxU7Y1rTjsf@cottage-cloud-staging-mr5xz.mongodb.net/test?retryWrites=true&w=majority",
+    "name": "db",
+    "connector": "mongodb"
+  }
+}

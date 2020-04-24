@@ -1,0 +1,47 @@
+{
+  "name": "booking",
+  "plural": "bookings",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "listing_id": {
+      "type": "string",
+      "required": true
+    },
+    "requester_id": {
+      "type": "string",
+      "required": true
+    },
+    "book_from": {
+      "type": "date",
+      "required": true
+    },
+    "book_to": {
+      "type": "date",
+      "required": true
+    },
+    "is_request": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "listing": {
+      "model": "listing",
+      "type": "belongsTo",
+      "foreignKey": "listing_id"
+    },
+    "requester": {
+      "model": "profile",
+      "type": "belongsTo",
+      "foreignKey": "requester_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

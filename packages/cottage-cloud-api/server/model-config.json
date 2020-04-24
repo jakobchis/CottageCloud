@@ -1,0 +1,77 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false,
+    "relations": {
+      "user": {
+        "type": "belongsTo",
+        "model": "profile",
+        "foreignKey": "userId"
+      }
+    }
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "profile": {
+    "dataSource": "db"
+  },
+  "country": {
+    "dataSource": "db",
+    "public": true
+  },
+  "province": {
+    "dataSource": "db",
+    "public": true
+  },
+  "address": {
+    "dataSource": "db",
+    "public": true
+  },
+  "credit_card": {
+    "dataSource": "db",
+    "public": true
+  },
+  "property": {
+    "dataSource": "db",
+    "public": true
+  },
+  "photo": {
+    "dataSource": "db",
+    "public": true
+  },
+  "listing": {
+    "dataSource": "db",
+    "public": true
+  },
+  "booking": {
+    "dataSource": "db",
+    "public": true
+  }
+}

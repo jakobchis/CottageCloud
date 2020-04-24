@@ -1,0 +1,45 @@
+{
+  "name": "listing",
+  "plural": "listings",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "property_id": {
+      "type": "string",
+      "required": true
+    },
+    "available_from": {
+      "type": "date",
+      "required": true
+    },
+    "available_to": {
+      "type": "date",
+      "required": true
+    },
+    "daily_rate": {
+      "type": "number",
+      "required": true
+    },
+    "description_amenities": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "property": {
+      "model": "property",
+      "type": "belongsTo",
+      "foreignKey": "property_id"
+    },
+    "bookings": {
+      "model": "booking",
+      "type": "hasMany",
+      "foreignKey": "listing_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

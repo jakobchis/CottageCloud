@@ -1,0 +1,56 @@
+{
+  "name": "profile",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name_first": {
+      "type": "string",
+      "required": true
+    },
+    "name_last": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "default_address_id": {
+      "type": "string"
+    },
+    "default_credit_card_id": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "accessTokens": {
+      "type": "hasMany",
+      "model": "AccessToken",
+      "foreignKey": "userId",
+      "options": {
+        "disableInclude": true
+      }
+    },
+    "addresses": {
+      "model": "address",
+      "type": "hasMany",
+      "foreignKey": "profile_id"
+    },
+    "properties": {
+      "model": "property",
+      "type": "hasMany",
+      "foreignKey": "owner_id"
+    },
+    "bookings": {
+      "model": "booking",
+      "type": "hasMany",
+      "foreignKey": "requester_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

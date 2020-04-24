@@ -1,0 +1,36 @@
+{
+  "name": "photo",
+  "plural": "photos",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "property_id": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "list_position": {
+      "type": "number",
+      "required": true
+    },
+    "photoBlob": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "property": {
+      "model": "property",
+      "type": "belongsTo",
+      "foreignKey": "property_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

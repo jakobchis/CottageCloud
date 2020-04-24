@@ -1,0 +1,100 @@
+{
+  "name": "property",
+  "plural": "properties",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "owner_id": {
+      "type": "string",
+      "required": true
+    },
+    "address_id": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "coordinates": {
+      "type": "geopoint",
+      "required": false
+    },
+    "bedrooms": {
+      "type": "number",
+      "required": true
+    },
+    "bathrooms": {
+      "type": "number",
+      "required": true
+    },
+    "description_base": {
+      "type": "string",
+      "required": true
+    },
+    "description_beds": {
+      "type": "string"
+    },
+    "description_baths": {
+      "type": "string"
+    },
+    "description_amenities": {
+      "type": "string"
+    },
+    "is_cannibis_friendly": {
+      "type": "boolean",
+      "required": true
+    },
+    "is_smoke_friendly": {
+      "type": "boolean",
+      "required": true
+    },
+    "is_pet_friendly": {
+      "type": "boolean",
+      "required": true
+    },
+    "has_central_air": {
+      "type": "boolean",
+      "required": true
+    },
+    "has_electricity": {
+      "type": "boolean",
+      "required": true
+    },
+    "has_television": {
+      "type": "boolean",
+      "required": true
+    },
+    "has_wifi": {
+      "type": "boolean",
+      "required": true
+    },
+    "has_water": {
+      "type": "boolean",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "listings": {
+      "model": "listing",
+      "type": "hasMany",
+      "foreignKey": "property_id"
+    },
+    "photos": {
+      "model": "photo",
+      "type": "hasMany",
+      "foreignKey": "property_id"
+    },
+    "owner": {
+      "model": "profile",
+      "type": "belongsTo",
+      "foreignKey": "owner_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

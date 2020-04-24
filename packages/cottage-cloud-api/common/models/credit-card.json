@@ -1,0 +1,46 @@
+{
+  "name": "credit_card",
+  "plural": "credit_cards",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "number": {
+      "type": "string",
+      "required": true
+    },
+    "expiry": {
+      "type": "date",
+      "required": true
+    },
+    "code": {
+      "type": "string",
+      "required": true
+    },
+    "profile_id": {
+      "type": "string",
+      "required": true
+    },
+    "billing_address_id": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "address": {
+      "model": "address",
+      "type": "belongsTo",
+      "foreignKey": "billing_address_id"
+    },
+    "profile": {
+      "model": "profile",
+      "type": "belongsTo",
+      "foreignKey": "profile_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
