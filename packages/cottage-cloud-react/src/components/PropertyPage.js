@@ -1,18 +1,13 @@
 import React from 'react';
 import {
-    Show, Edit, Create, SimpleForm, TabbedShowLayout, Tab, DateField, SelectInput,
+    Show, Edit, Create, SimpleForm, TabbedShowLayout, Tab, SelectInput,
     TextField, NumberField, TextInput, BooleanField, BooleanInput, Datagrid,
-    ImageField, ImageInput, ReferenceField, ReferenceManyField, List, ReferenceInput, SelectArrayInput,
+    ImageField, ReferenceField, ReferenceManyField, List, ReferenceInput,
     TopToolbar, EditButton, Button
 } from 'react-admin';
 import storage from '../utils/Storage.js';
 import { Link } from 'react-router-dom';
 
-const BlobField = ({ record = {} }) => <img style={{ width: "100%", height: "auto", maxWidth: "200px", maxHeight: "200px" }} src={`${record.photoBlob}`} />;
-
-const SubReference = ({ translateChoice, children, ...props }) => (
-    <ReferenceField {...props}>{children}</ReferenceField>
-);
 const UserId = storage.load('lbtoken').userId;
 
 const PropertyShowCustomActions = ({ basePath, data, resource }) => (

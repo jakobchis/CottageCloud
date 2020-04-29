@@ -2,7 +2,7 @@ Update source code through git
 
 Copy packages folder to a new deployment folder
 
-Edit cottage-cloud-react\src\Globals.js localhost URL and replace with live URL: "https://cottagecloud.appspot.com/api"
+Edit cottage-cloud-react\src\utils\Globals.js localhost URL and replace with live URL: "https://cottagecloud.appspot.com/api"
 
 From within cottage-cloud-react folder replace start script in package.json with: "node server.js"
 

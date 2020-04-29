@@ -1,14 +1,12 @@
 import React from 'react';
 import {
-  Create, SimpleForm, ReferenceArrayInput, SelectArrayInput, DateInput, NumberInput, List, Show, SimpleShowLayout,
-  NumberField, Datagrid, ReferenceField, ReferenceManyField, TextField, DateField, TextInput, Edit, SelectInput, ReferenceInput,
-  TopToolbar, EditButton, Button, SingleFieldList, ImageField
+  Create, SimpleForm, DateInput, NumberInput, List, Show, SimpleShowLayout,
+  NumberField, Datagrid, ReferenceField, TextField, DateField, TextInput, Edit, SelectInput, ReferenceInput,
+  TopToolbar, EditButton, Button
 } from 'react-admin';
 import HomePageFilter from './HomePageFilter';
 import { Link } from 'react-router-dom';
 import { parse } from "query-string";
-
-const BlobField = ({ record = {} }) => <img style={{ width: "100%", height: "auto", maxWidth: "200px", maxHeight: "200px" }} src={`${record.photoBlob}`} />;
 
 // Hack since react-admin doesn't support nested ReferenceFields https://github.com/marmelab/react-admin/issues/2140
 const SubReference = ({ translateChoice, children, ...props }) => (

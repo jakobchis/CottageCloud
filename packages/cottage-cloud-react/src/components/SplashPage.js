@@ -69,7 +69,7 @@ export default function SplashPage() {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <img className={classes.splashImage} src={splashImage} alt="Splash Image of Cabin" />
+        <img className={classes.splashImage} src={splashImage} alt="Cabin" />
         <Typography component="h1" variant="h5">
           {message}
         </Typography>

@@ -6,7 +6,6 @@ import {
   Datagrid,
   SimpleForm,
   ReferenceField,
-  TextField,
   DateField,
   TextInput,
   DateInput,
@@ -20,13 +19,6 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 
 const UserId = storage.load('lbtoken').userId;
-
-const BlobField = ({ record = {} }) => <img style={{ width: "100%", height: "auto", maxWidth: "200px", maxHeight: "200px" }} src={`${record.photoBlob}`} />;
-
-// Hack since react-admin doesn't support nested ReferenceFields https://github.com/marmelab/react-admin/issues/2140
-const SubReference = ({ translateChoice, children, ...props }) => (
-  <ReferenceField {...props}>{children}</ReferenceField>
-);
 
 const CustomTextField = ({ source, record, text = {} }) => <span>{text}</span>
 
